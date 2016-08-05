@@ -39,7 +39,8 @@ export const profileStyles = StyleSheet.create({
     marginVertical: 10,
   },
   logoutButton: {
-    position: 'absolute',
+    // position: 'absolute',
+    paddingVertical: 12,
     left: 30,
   },
   logoutText: {
