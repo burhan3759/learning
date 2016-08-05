@@ -9,6 +9,7 @@ import ActivityView from './activity/ActivityView';
 import MessagesView from './messages/MessagesView';
 import ProfileView from './profile/ProfileView';
 
+
 class Dashboard extends Component{
   constructor(){
     super();
@@ -18,10 +19,13 @@ class Dashboard extends Component{
   }
   render(){
     return (
+
       <TabNavigator>
         <TabNavigator.Item
           selected={this.state.selectedTab === 'Activity'}
           title="Activity"
+          renderIcon={() => <Icon name="ios-pulse" size={25} color="#ccc" />}
+          renderSelectedIcon={() => <Icon name="ios-pulse" size={25} color="#4F8EF7" />}
           onPress={() => this.setState({ selectedTab: 'Activity' })}>
           <ActivityView />
         </TabNavigator.Item>
@@ -29,6 +33,8 @@ class Dashboard extends Component{
         <TabNavigator.Item
           selected={this.state.selectedTab === 'Messages'}
           title="Messages"
+          renderIcon={() => <Icon name="ios-chatboxes" size={25} color="#ccc" />}
+          renderSelectedIcon={() => <Icon name="ios-chatboxes" size={25} color="#4F8EF7" />}
           onPress={() => this.setState({ selectedTab: 'Messages' })}>
           <MessagesView />
         </TabNavigator.Item>
@@ -36,10 +42,13 @@ class Dashboard extends Component{
         <TabNavigator.Item
           selected={this.state.selectedTab === 'Profile'}
           title="Profile"
+          renderIcon={() => <Icon name="ios-person" size={25} color="#ccc" />}
+          renderSelectedIcon={() => <Icon name="ios-person" size={25} color="#4F8EF7" />}
           onPress={() => this.setState({ selectedTab: 'Profile' })}>
           <ProfileView />
         </TabNavigator.Item>
       </TabNavigator>
+
     )
   }
 }
