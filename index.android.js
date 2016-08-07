@@ -11,7 +11,8 @@ import {
 } from 'react-native';
 
 import Landing from './applicaton/components/landing';
-import Dashboard from './applicaton/components/dashboard';
+import Login from './applicaton/components/accounts/Login';
+import Register from './applicaton/components/accounts/Register';
 import { globals } from './applicaton/styles';
 
 class learning extends Component {
@@ -26,9 +27,9 @@ class learning extends Component {
               return (
                 <Landing navigator={navigator}/>
             );
-            case 'Dashboard':
+            case 'Login':
               return (
-                <Dashboard navigator={navigator}/>
+                <Login navigator={navigator} />
             );
           }
         }}
