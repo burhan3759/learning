@@ -16,6 +16,16 @@ import Register from './applicaton/components/accounts/Register';
 import { globals } from './applicaton/styles';
 
 class learning extends Component {
+  constructor(){
+    super();
+    this.updateUser = this.updateUser.bind(this);
+    this.state = {
+      user: null
+    };
+  }
+  updateUser(user){
+    this.setState({ user: user });
+  }
   render() {
     return (
       <Navigator
@@ -26,6 +36,10 @@ class learning extends Component {
             case 'Landing':
               return (
                 <Landing navigator={navigator}/>
+            );
+            case 'Register':
+              return (
+                <Register navigator={navigator} />
             );
             case 'Login':
               return (
